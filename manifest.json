@@ -1,0 +1,30 @@
+{
+
+    "manifest_version": 2,
+    "name": "tab2hyperlinklist",
+    "version": "1.0",
+  
+    "description": "Prepares a list of hyperlink list from open tabs.",
+  
+    "icons": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+          "19": "icons/icon-19.png",
+          "38": "icons/icon-38.png"
+        },
+        "default_title": "pack my list"
+      },
+    
+    "permissions": [
+        "<all_urls>",
+        "tabs"
+      ],
+
+    "background": {
+        "scripts": ["tab2hyperlinklist.js"]
+    }
+  }
