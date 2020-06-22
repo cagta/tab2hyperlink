@@ -5,6 +5,16 @@ function listTabs() {
     tabsList.then(logTabs, onError);
 }
 
+function updateClipboard(newClip) {
+    navigator.clipboard.writeText(newClip).then(function() {
+            /* clipboard successfully set */
+            console.log('successfully set!');
+        }, function() {
+            /* clipboard write failed */
+            onError('failed!');
+    });
+}
+
 function logTabs(tabs){
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var date = new Date();
@@ -16,9 +26,9 @@ function logTabs(tabs){
         html += '<li><span>'+today+'</span> &raquo; <a href="'+tab.url+'">'+tab.title+'</a></li>\n';
     }
 
-    console.log(html);
+    updateClipboard(html)
 }
-
+  
 function onError(error) {
     console.log(`Error: ${error}`);
 }
